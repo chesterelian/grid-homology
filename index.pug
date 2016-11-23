@@ -1,0 +1,34 @@
+doctype html
+html(ng-app="Grid")
+  head
+    meta(charset="utf-8")
+    title Grid
+    link(rel="stylesheet" href="bootstrap.min.css")
+    script(src="jquery.min.js")
+    script(src="angular.min.js")
+    script(src="grid.js")
+  body
+    .container(ng-controller="mainController")
+      .row
+        .col-md-4
+          input.form-control(type="number" placeholder="Grid size"
+            min="2" max="8" ng-model="n")
+      .row
+        .col-md-4
+          .checkbox(ng-repeat="state in states" ng-if="state.length > 0")
+            label
+              input(type="checkbox")
+              | {{$index}}
+      .row
+        .col-md-6
+          .btn-group
+            button.btn.btn-default(type="button" 
+              ng-repeat="i in [2, 3, 4, 5, 6, 7, 8]") {{i}}
+        .col-md-2
+          .input-group
+            span.input-group-addon O
+            input.form-control(type="text" ng-model="oPerm")
+        .col-md-2
+          .input-group
+            span.input-group-addon X
+            input.form-control(type="text" ng-model="xPerm")

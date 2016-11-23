@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+
+% ----------------------------------------------------------- essential packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{booktabs} % somewhat essential, I guess
+\usepackage{setspace} % for double spacing, etc.
+\usepackage{multicol} % multiple columns
+\usepackage{empheq} % for boxing \[...\] equations
+
+% ------------------------------------------------------------------- font stuff
+\renewcommand{\rmdefault}{ptm}
+\usepackage[lite,zswash,eucal]{mtpro2}
+
+% ----------------------------------------------------------- fancy header stuff
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO,LE]{}
+\chead{\textbf{Stabilization}}
+\fancyhead[RO,RE]{}
+
+% ------------------------------------------------------------------- tikz stuff
+\usepackage{tikz}
+\tikzset{%
+  every picture/.style={thick, >=stealth}%
+}
+\usetikzlibrary{positioning}
+%\usetikzlibrary{decorations.markings}
+
+% ----------------------------------------------------------------------- macros
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\NN}{\mathbf{N}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\lcm}{lcm}
+
+% --------------------------------------------------------------- begin document
+\begin{document}
+
+\noindent
+Let $\displaystyle A = GC^-(\mathbf G) = \bigoplus_{i=1}^2 F[x_1, x_2]
+\langle a_i \rangle$, equipped with the differential
+\begin{align*}
+  \partial a_1 &= 0 \\
+  \partial a_2 &= (x_1 + x_2) a_1.
+\end{align*}
+Let $\displaystyle B = GC^-(\mathbf G') = \bigoplus_{i=1}^6 F[x_1, x_2, x_3]
+\langle b_i \rangle$, viewed as an $F[x_1, x_2]$-module, equipped with the
+differential
+\begin{align*}
+  \partial b_1 &= b_3 + x_3 b_6 \\
+  \partial b_2 &= (x_1 + x_2) b_1 + (x_2 + x_3) b_4 + (x_1 + x_3) b_5 \\
+  \partial b_3 &= 0 \\
+  \partial b_4 &= b_3 + x_1 b_6 \\
+  \partial b_5 &= b_3 + x_2 b_6 \\
+  \partial b_6 &= 0.
+\end{align*}
+Define $F[x_1, x_2]$-module homomorphisms \[
+  f: A \to B: &\ccases{
+    a_1 \mapsto b_6, \\
+    a_2 \mapsto b_4 + b_5,
+  }
+  \qquad \text{and} \qquad
+  g: B \to A: &\ccases{
+    b_1 \mapsto 0, \\
+    b_2 \mapsto 0, \\
+    b_3 \mapsto x_1 a_1, \\
+    b_4 \mapsto 0, \\
+    b_5 \mapsto a_2, \\
+    b_6 \mapsto a_1, \\
+    x_3 \mapsto x_1.
+  }
+\]
+A quick inspection shows that $gf = \id_A$. We show that $fg + \id_B = \partial
+h + h \partial$, where \[
+  
+\]
+
+\end{document}
